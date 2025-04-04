@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Fredoka One', cursive;
+            background: linear-gradient(135deg, #ffdee9, #b5fffc);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ff69b4;
+            animation: popIn 1s ease-out;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #444;
+            max-width: 600px;
+            margin: 10px auto;
+        }
+
+        .button {
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #ffe066;
+        }
+
+        .gift-box {
+            margin-top: 40px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 1s forwards;
+        }
+
+        .gift-icon {
+            font-size: 4rem;
+            animation: bounce 1s infinite;
+            color: #ff69b4;
+        }
+
+        .surprise-message {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #ff4081;
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎉 Happy Birthday! 🎉</h1>
+    <p>Welcome to your digital birthday celebration! Tap the button below to blow out the candles and unlock a surprise
+        🎂</p>
+    <button class="button" onclick="blowCandles()">Blow Out Candles</button>
+    <div id="wish" style="display:none; margin-top: 20px; font-size: 1.5rem; color: #e91e63;">🎈 Make a Wish! ✨</div>
+
+    <div id="gift" class="gift-box">
+        <div class="gift-icon">🎁</div>
+        <p>You’ve unlocked a birthday surprise!</p>
+        <button class="button" onclick="showMessage()">Open Gift</button>
+    </div>
+
+    <div id="surpriseMessage" class="surprise-message">🎉 Surprise! You are amazing! 🎊</div>
+
+    <div class="footer">Made with ❤️ for your special day</div>
+
+    <script>
+        function blowCandles() {
+            document.getElementById('wish').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('gift').style.display = 'flex';
+            }, 2000);
+        }
+
+        function showMessage() {
+            document.getElementById('surpriseMessage').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
